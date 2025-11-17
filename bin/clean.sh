@@ -56,8 +56,8 @@ if [[ -f "$HOME/.config/mole/whitelist" ]]; then
         # Expand tilde to home directory
         [[ "$line" == ~* ]] && line="${line/#~/$HOME}"
 
-        # Stricter path validation (no spaces, wildcards only at end)
-        # Allow: letters, numbers, /, _, ., -, @ and * only at the end
+        # Path validation with support for spaces and wildcards
+        # Allow: letters, numbers, /, _, ., -, @, spaces, and * anywhere in path
         if [[ ! "$line" =~ ^[a-zA-Z0-9/_.@\ *-]+$ ]]; then
             WHITELIST_WARNINGS+=("Invalid path format: $line")
             continue
