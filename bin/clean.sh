@@ -58,7 +58,7 @@ if [[ -f "$HOME/.config/mole/whitelist" ]]; then
 
         # Stricter path validation (no spaces, wildcards only at end)
         # Allow: letters, numbers, /, _, ., -, @ and * only at the end
-        if [[ ! "$line" =~ ^[a-zA-Z0-9/_.@-]+(\*)?$ ]]; then
+        if [[ ! "$line" =~ ^[a-zA-Z0-9/_.@\ *-]+$ ]]; then
             WHITELIST_WARNINGS+=("Invalid path format: $line")
             continue
         fi
