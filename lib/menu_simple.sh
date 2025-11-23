@@ -24,7 +24,7 @@ paginated_multi_select() {
     fi
 
     local total_items=${#items[@]}
-    local items_per_page=15
+    local items_per_page=12
     local cursor_pos=0
     local top_index=0
     local -a selected=()
@@ -168,7 +168,7 @@ paginated_multi_select() {
 
         # Clear any remaining lines at bottom
         printf "${clear_line}\n" >&2
-        printf "${clear_line}${GRAY}${ICON_NAV_UP}/${ICON_NAV_DOWN}${NC} Nav  ${GRAY}|${NC}  ${GRAY}Space${NC} Select  ${GRAY}|${NC}  ${GRAY}Enter${NC} Confirm  ${GRAY}|${NC}  ${GRAY}Q${NC} Quit\n" >&2
+        printf "${clear_line}${GRAY}${ICON_NAV_UP}${ICON_NAV_DOWN}  |  Space  |  Enter  |  Q Exit${NC}\n" >&2
 
         # Clear one more line to ensure no artifacts
         printf "${clear_line}" >&2
